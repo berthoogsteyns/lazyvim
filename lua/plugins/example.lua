@@ -10,9 +10,25 @@
 -- * override the configuration of LazyVim plugins
 -- TODO: split up config in different files
 return {
+  {
+    "folke/zen-mode.nvim",
+    cmd = "ZenMode",
+    opts = {
+      plugins = {
+        alacritty = {
+          enabled = true,
+          font = "14",
+        },
+      },
+    },
+  },
   -- add gruvbox
   { "ellisonleao/gruvbox.nvim" },
-  -- Configure LazyVim to load gruvbox
+  -- {
+  --    "m4xshen/hardtime.nvim",
+  --    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+  --    opts = {}
+  -- }, -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
     opts = {

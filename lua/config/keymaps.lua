@@ -16,6 +16,7 @@ end, { desc = "Toggle neotree focus" })
 
 -- ThePrimeagen harpoon keymaps
 local harpoon = require("harpoon")
+local zenmode = require("zen-mode")
 
 map("n", "<leader><leader>a", function()
   harpoon:list():append()
@@ -35,3 +36,8 @@ end, { desc = "goto third harpoon" })
 map("n", "<leader><leader>4", function()
   harpoon:list():select(4)
 end, { desc = "goto fourth harpoon" })
+map("n", "<leader>z", function()
+  zenmode.toggle({
+    window = { width = 0.85 },
+  })
+end, { desc = "Toggle zenmode" })
