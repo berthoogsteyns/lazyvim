@@ -1,15 +1,17 @@
--- since this is just an example spec, don't actually load anything here and return an empty spec
--- stylua: ignore
--- if true then return {} end
-
--- every spec file under the "plugins" directory will be loaded automatically by lazy.nvim
---
--- In your plugin files, you can:
--- * add extra plugins
--- * disable/enabled LazyVim plugins
--- * override the configuration of LazyVim plugins
 -- TODO: split up config in different files
 return {
+  {
+    "rebelot/kanagawa.nvim",
+    config = function()
+      require("kanagawa").setup({
+        theme = "wave",
+        -- background ={
+        --   light = "lotus"
+        -- }
+      })
+    end,
+  },
+  { "prisma/vim-prisma" },
   {
     "folke/zen-mode.nvim",
     cmd = "ZenMode",
@@ -33,6 +35,7 @@ return {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "gruvbox",
+      -- background = "light",
     },
   },
   {
@@ -49,7 +52,7 @@ return {
   },
 
   -- disable trouble
-  { "folke/trouble.nvim", enabled = false },
+  { "folke/trouble.nvim", enabled = true },
 
   -- add symbols-outline
   {

@@ -19,7 +19,7 @@ local harpoon = require("harpoon")
 local zenmode = require("zen-mode")
 
 map("n", "<leader><leader>a", function()
-  harpoon:list():append()
+  harpoon:list():add()
 end, { desc = "Toggle harpoon menu" })
 map("n", "<leader><leader>e", function()
   harpoon.ui:toggle_quick_menu(harpoon:list())
